@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 70%;
+    padding: 40px;
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: rgba(78, 78, 78, 0.7);
+    border-radius: 10px;
+    border: 3px solid #1E1E1E;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background-color: #9D6DFD;
+}
+
+h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+input[type="text"]::placeholder {
+    color: #B0B0B0;
+}
+
+input[type="text"]:focus {
+    outline: 1px solid #9D6DFD;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #BB86FC;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9D6DFD;
+}
+
+#response-container {
+    font-size: 18px;
+    color: #BB86FC;
+	text-align: left;
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #BB86FC;
+    overflow: hidden;
+    transition: height .2s;
+}
+
+.centered {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 10px;
+        padding: 20px;
+        max-height: calc(100% - 20px);
+    }
+
+    #response-container {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

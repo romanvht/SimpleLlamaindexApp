@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core import StorageContext, Settings, load_index_from_storage
@@ -30,11 +32,14 @@ def handle_post():
     return jsonify(response_data)
 
 if __name__ == '__main__':
+    # Загружаем конфиг
+    load_dotenv()
+
     # Подключаем нейронку
-    api_key = "<ваш ключ ProxyAPI>"
+    api_key = os.getenv('API_KEY')
 
     system_prompt = (
-        "Ты - помощник для менеджеров компании Хатико. Отвечай только на Русском языке."
+        "Ты - цифровой помощник для базы знаний. Отвечай только на Русском языке."
         "\nОтвечай подробно, используя документы из контекста и не упускай детали."
         "\nОтветь на вопрос. Если не можешь ответить - НЕ ПРИДУМЫВАЙ ОТВЕТ."
     )

@@ -9,7 +9,7 @@ function sendQuestion() {
 
     responseContainer.innerHTML = '<div class="centered"><img src="assets/img/load.svg" alt="loading"></div>';
 
-    const apiUrl = 'https://hatiko.romanvht.ru:5000/api';
+    const apiUrl = `${window.location.origin}:5000/api`;
 
     fetch(apiUrl, {
         method: 'POST',
